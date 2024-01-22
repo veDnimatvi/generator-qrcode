@@ -175,15 +175,3 @@ function generateQRContent(qrRawData = {}) {
   const qrContent = qrContentNoChecksum + checksum.toUpperCase();
   return qrContent;
 }
-
-const qrContent = generateQRContent({
-  qrType: "DYNAMIC",
-  bin: "970416",
-  receiverNumber: "224528479",
-  instrumentType: "ACCOUNT",
-  amount: 10000,
-  orderId: "NPS6869",
-  description: "TRANSFER TO SOMEONE",
-});
-
-console.log(qrContent);

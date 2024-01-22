@@ -75,7 +75,7 @@ function generateRawQRString(objProps) {
 
 function calculateCRC(data) {
   // Convert data to buffer
-  const buffer = Buffer.from(data, "utf8");
+  const buffer = new TextEncoder().encode(data);
   // Calculate the CRC
   const result = crc16ccitt(buffer, 0xffff);
   // Convert the CRC to hex string

@@ -19,6 +19,16 @@
     ></div>
 
     <script type="text/javascript">
+      const qrContent = generateQRContent({
+        qrType: "DYNAMIC",
+        bin: "970416",
+        receiverNumber: "224528479",
+        instrumentType: "ACCOUNT",
+        amount: 10000,
+        orderId: "NPS6869",
+        description: "TRANSFER TO SOMEONE",
+      });
+
       const vietQR = new VietQR();
       vietQR
         .setBeneficiaryOrganization("970423", "04047563801")
@@ -32,22 +42,10 @@
       });
 
       function makeCode() {
-        qrcode.makeCode(vietQR.build());
+        qrcode.makeCode(qrContent);
       }
 
       makeCode();
-
-      const qrContent = generateQRContent({
-        qrType: "DYNAMIC",
-        bin: "970416",
-        receiverNumber: "224528479",
-        instrumentType: "ACCOUNT",
-        amount: 10000,
-        orderId: "NPS6869",
-        description: "TRANSFER TO SOMEONE",
-      });
-
-      console.log(qrContent);
     </script>
   </body>
 </html>

@@ -18,6 +18,13 @@
     ></div>
 
     <script type="text/javascript">
+      // const vietQR = new VietQR();
+      // vietQR
+      //   .setBeneficiaryOrganization("970423", "04047563801")
+      //   .setTransactionAmount("18000")
+      //   .setAdditionalDataFieldTemplate("test");
+
+      //   const qrContent = vietQR.build();
       const qrContent = generateQRContent({
         qrType: "DYNAMIC",
         bin: "970416",
@@ -28,13 +35,6 @@
         description: "TRANSFER TO SOMEONE",
       });
 
-      const vietQR = new VietQR();
-      vietQR
-        .setBeneficiaryOrganization("970423", "04047563801")
-        .setTransactionAmount("18000")
-        .setAdditionalDataFieldTemplate("test");
-
-      console.log(vietQR.build());
       var qrcode = new QRCode(document.getElementById("qrcode"), {
         width: 300,
         height: 300,
